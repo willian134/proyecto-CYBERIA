@@ -1,0 +1,65 @@
+<ion-header>
+  <app-navbar></app-navbar>
+</ion-header>
+
+<ion-content class="ion-padding fondo">
+
+  <!-- PANTALLA INICIO -->
+  <div *ngIf="pantalla === 'inicio'" id="inicio">
+    <h1>🎮 Juego de Inteligencia Artificial</h1>
+
+    <ion-button expand="block" (click)="iniciarJuego('cpu')">
+      🤖 Vs Máquina
+    </ion-button>
+
+    <ion-button expand="block" (click)="iniciarJuego('2p')">
+      👥 2 Jugadores
+    </ion-button>
+  </div>
+
+  <!-- PANTALLA JUEGO -->
+  <div *ngIf="pantalla === 'juego'" id="juego">
+    <h2>{{ turnoTexto }}</h2>
+
+    <ion-button (click)="lanzarDado()" [disabled]="!puedeLanzar">
+      🎲 Lanzar dado
+    </ion-button>
+
+    <p>Dado: <strong>{{ dado }}</strong></p>
+
+    <div id="tablero">
+      <div class="casilla" *ngFor="let c of tablero; let i = index">
+        {{ i + 1 }}
+
+        <div
+          *ngIf="posiciones[0] === i + 1"
+          class="ficha goku"
+        >🟠</div>
+
+        <div
+          *ngIf="posiciones[1] === i + 1"
+          class="ficha vegeta"
+        >🔵</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERLAY -->
+  <div id="overlay" *ngIf="mostrarPregunta"></div>
+
+  <!-- MODAL PREGUNTA -->
+  <div id="preguntaBox" *ngIf="mostrarPregunta">
+    <h3>{{ preguntaActual?.pregunta }}</h3>
+
+    <div
+      class="opcion"
+      *ngFor="let op of preguntaActual?.opciones; let i = index"
+      (click)="responder(i)"
+    >
+      {{ op }}
+    </div>
+
+    <p>{{ feedback }}</p>
+  </div>
+
+</ion-content>
