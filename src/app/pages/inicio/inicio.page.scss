@@ -6,7 +6,7 @@
 /* Fondo general */
 ion-content {
   --background: radial-gradient(circle at top, #0a2a33, #000);
-  color: #00ffff;
+  color: #ffffff;
 }
 
 /* RESET */
@@ -15,6 +15,7 @@ ion-content {
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Arial, sans-serif;
+  color: #ffffff;
 }
 
 /* ================= HEADER ================= */
@@ -46,7 +47,7 @@ ion-content {
 /* LOGO */
 .logo {
   font-size: 28px;
-  color: #00ffff;
+  color: #ffffff;
   text-shadow: 0 0 10px #00ffff;
 }
 
@@ -58,7 +59,7 @@ ion-content {
 }
 
 .nav-links a {
-  color: #bffcff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   padding: 6px 12px;
@@ -68,7 +69,7 @@ ion-content {
 
 .nav-links a:hover {
   background: rgba(0,255,255,.12);
-  color: #00ffff;
+  color: #ffffff;
   box-shadow: 0 0 12px rgba(0,255,255,.8);
 }
 
@@ -82,7 +83,7 @@ ion-content {
   padding: 8px 18px;
   border-radius: 30px;
   background: linear-gradient(90deg,#1e3a8a,#06b6d4);
-  color: white;
+  color: #ffffff;
   font-weight: 500;
   cursor: pointer;
 
@@ -114,14 +115,14 @@ ion-content {
 .user-dropdown a {
   display: block;
   padding: 14px;
-  color: #bffcff;
+  color: #ffffff;
   text-decoration: none;
   transition: .3s;
 }
 
 .user-dropdown a:hover {
   background: rgba(0,255,255,.15);
-  color: #00ffff;
+  color: #ffffff;
 }
 
 .user-menu:hover .user-dropdown {
@@ -138,13 +139,13 @@ ion-content {
 }
 
 .hero h1 {
-  color: white;
+  color: #ffffff;
   font-size: 48px;
   letter-spacing: 2px;
 }
 
 .hero p {
-  color: #9ffcff;
+  color: #ffffff;
   margin-top: 10px;
 }
 
@@ -155,6 +156,7 @@ ion-content {
   margin: auto;
   padding: 20px;
   text-align: center;
+  color: #ffffff;
 }
 
 /* ================= CARDS ================= */
@@ -204,6 +206,7 @@ ion-content {
   padding: 20px;
   backface-visibility: hidden;
   text-align: center;
+  color: #ffffff;
 }
 
 .card-front img {
@@ -220,6 +223,7 @@ ion-content {
 .card-back p {
   font-size: 0.95em;
   line-height: 1.5;
+  color: #ffffff;
 }
 
 /* ================= FOOTER ================= */
@@ -229,4 +233,5 @@ footer {
   padding: 30px;
   border-top: 1px solid cyan;
   margin-top: 40px;
+  color: #ffffff;
 }

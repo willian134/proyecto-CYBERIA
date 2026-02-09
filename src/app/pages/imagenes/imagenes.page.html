@@ -1,0 +1,131 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>imagenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat IA + Imágenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="container">
+
+    <!-- PANEL IZQUIERDO -->
+    <div class="panel">
+      <h3>Preguntas IA</h3>
+      <ion-button expand="block" (click)="showQuestions('matematicas')">Matemáticas</ion-button>
+      <ion-button expand="block" (click)="showQuestions('programacion')">Programación</ion-button>
+      <ion-button expand="block" (click)="showQuestions('ia')">IA</ion-button>
+      <ion-button expand="block" (click)="showQuestions('chatgpt')">ChatGPT</ion-button>
+      <ion-button expand="block" (click)="showQuestions('gemini')">Gemini</ion-button>
+
+      <div class="item"
+        *ngFor="let q of preguntasActuales"
+        draggable="true"
+        (dragstart)="startDragPregunta(q)">
+        {{ q.q }}
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div class="chat">
+      <ion-button expand="block" color="warning" (click)="procesar()">Enviar</ion-button>
+
+      <div *ngIf="respuestaTexto" class="respuesta">
+        {{ respuestaTexto }}
+      </div>
+
+      <div *ngIf="respuestaImagen" class="respuesta-img">
+        <img [src]="respuestaImagen">
+      </div>
+    </div>
+
+    <!-- PANEL DERECHO -->
+    <div class="panel">
+      <h3>Imágenes</h3>
+      <ion-button expand="block" (click)="showFragments('dragonball')">Dragon Ball</ion-button>
+      <ion-button expand="block" (click)="showFragments('futbol')">Fútbol</ion-button>
+      <ion-button expand="block" (click)="showFragments('otros')">Otros</ion-button>
+      <ion-button expand="block" (click)="showFragments('memes')">Memes</ion-button>
+
+      <div class="item"
+        *ngFor="let f of fragmentosActuales"
+        draggable="true"
+        (dragstart)="startDragFragmento(f)">
+        {{ f.name }}
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat IA + Imágenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="container">
+
+    <!-- PANEL IZQUIERDO -->
+    <div class="panel">
+      <h3>Preguntas IA</h3>
+      <ion-button expand="block" (click)="showQuestions('matematicas')">Matemáticas</ion-button>
+      <ion-button expand="block" (click)="showQuestions('programacion')">Programación</ion-button>
+      <ion-button expand="block" (click)="showQuestions('ia')">IA</ion-button>
+      <ion-button expand="block" (click)="showQuestions('chatgpt')">ChatGPT</ion-button>
+      <ion-button expand="block" (click)="showQuestions('gemini')">Gemini</ion-button>
+
+      <div class="item"
+        *ngFor="let q of preguntasActuales"
+        draggable="true"
+        (dragstart)="startDragPregunta(q)">
+        {{ q.q }}
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div class="chat">
+      <ion-button expand="block" color="warning" (click)="procesar()">Enviar</ion-button>
+
+      <div *ngIf="respuestaTexto" class="respuesta">
+        {{ respuestaTexto }}
+      </div>
+
+      <div *ngIf="respuestaImagen" class="respuesta-img">
+        <img [src]="respuestaImagen">
+      </div>
+    </div>
+
+    <!-- PANEL DERECHO -->
+    <div class="panel">
+      <h3>Imágenes</h3>
+      <ion-button expand="block" (click)="showFragments('dragonball')">Dragon Ball</ion-button>
+      <ion-button expand="block" (click)="showFragments('futbol')">Fútbol</ion-button>
+      <ion-button expand="block" (click)="showFragments('otros')">Otros</ion-button>
+      <ion-button expand="block" (click)="showFragments('memes')">Memes</ion-button>
+
+      <div class="item"
+        *ngFor="let f of fragmentosActuales"
+        draggable="true"
+        (dragstart)="startDragFragmento(f)">
+        {{ f.name }}
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">imagenes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>

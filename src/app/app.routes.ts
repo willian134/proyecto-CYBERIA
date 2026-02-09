@@ -34,4 +34,11 @@ export const routes: Routes = [
     path: 'chat',
     loadComponent: () => import('./pages/chat/chat.page').then( m => m.ChatPage)
   },
+  {
+  path: 'imagenes',
+  loadComponent: () =>
+    import('./pages/imagenes/imagenes.page')
+      .then(m => m.ImagenesPage)
+}
+
 ];
