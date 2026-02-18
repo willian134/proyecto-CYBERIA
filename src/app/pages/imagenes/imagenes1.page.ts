@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from "src/app/components/navbar/navbar.component";
 
 @Component({
-  selector: 'app-imagenes',
-  templateUrl: './imagenes.page.html',
-  styleUrls: ['./imagenes.page.scss'],
+  selector: 'app-imagenes1',
+  templateUrl: './imagenes1.page.html',
+  styleUrls: ['./imagenes1.page.scss'],
   standalone: true,
   imports: [
     IonicModule,

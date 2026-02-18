@@ -37,13 +37,9 @@ export const routes: Routes = [
   {
   path: 'imagenes',
   loadComponent: () =>
-    import('./pages/imagenes/imagenes.page')
+    import('./pages/imagenes/imagenes1.page')
       .then(m => m.ImagenesPage)
 },
-  {
-    path: 'juegoos',
-    loadComponent: () => import('./pages/juegoos/juegoos.page').then( m => m.JuegoosPage)
-  },
 
 
 
