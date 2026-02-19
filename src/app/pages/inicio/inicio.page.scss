@@ -1,34 +1,35 @@
+/* FUERZA BRUTA PARA EL HOST */
 :host {
   display: block;
   min-height: 100%;
-  background-color: #000000;
+  background-color: #000000 !important;
 }
 
-/* ===== FONDO GENERAL NEGRO ===== */
+/* ION-CONTENT: La clave en Ionic */
 ion-content {
-  --background: #000000; /* Fondo negro sólido */
-  background-color: #000000;
+  /* Estas variables sobreescriben el motor de Ionic */
+  --background: #000000 !important;
+  --background-color: #000000 !important;
+  background-color: #000000 !important;
   color: #ffffff;
 }
 
-/* RESET */
+/* RESET GENERAL */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   color: #ffffff;
 }
 
 /* ================= HEADER ================= */
-
 .site-header {
   width: 100%;
-  background: #000000; /* Fondo negro */
-  border-bottom: 1px solid rgba(0, 255, 255, .3);
+  background: #000000 !important;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
 }
 
-/* NAVBAR */
 .cyber-navbar {
   max-width: 1200px;
   margin: 15px auto;
@@ -36,20 +37,17 @@ ion-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #050505; /* Negro muy leve para contraste */
+  background: #0a0a0a !important; /* Un gris casi imperceptible */
   border-radius: 40px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, .3);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
-/* LOGO */
 .logo {
   font-size: 28px;
-  color: #ffffff;
   text-shadow: 0 0 10px #00ffff;
   font-weight: bold;
 }
 
-/* LINKS NAVBAR */
 .nav-links {
   list-style: none;
   display: flex;
@@ -57,50 +55,41 @@ ion-content {
 }
 
 .nav-links a {
-  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   padding: 8px 15px;
-  border-radius: 20px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .nav-links a:hover {
-  background: rgba(0, 255, 255, .15);
-  box-shadow: 0 0 15px rgba(0, 255, 255, .6);
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
 }
 
 /* ================= USUARIO ================= */
-
-.user-menu {
-  position: relative;
-}
-
+.user-menu { position: relative; }
 .user-btn {
   padding: 8px 18px;
   border-radius: 30px;
   background: linear-gradient(90deg, #1e3a8a, #06b6d4);
-  color: #ffffff;
-  font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 255, 255, .5);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
-/* DROPDOWN */
 .user-dropdown {
   position: absolute;
   top: 125%;
   right: 0;
   width: 190px;
-  background: #0a0a0a; /* Fondo casi negro */
+  background: #050505 !important;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, .5);
-  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: .3s;
-  z-index: 100;
+  transition: 0.3s;
+  z-index: 999;
 }
 
 .user-menu:hover .user-dropdown {
@@ -109,42 +98,7 @@ ion-content {
   transform: translateY(0);
 }
 
-.user-dropdown a {
-  display: block;
-  padding: 14px;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-}
-
-.user-dropdown a:hover {
-  background: rgba(0, 255, 255, .15);
-}
-
-/* ================= HERO & INTRO ================= */
-
-.hero {
-  text-align: center;
-  margin-top: 40px;
-  padding: 0 20px;
-}
-
-.hero h1 {
-  font-size: 48px;
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, #fff, #00ffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero p, .intro {
-  color: #e0e0e0;
-  margin-top: 15px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ================= CARDS (EFECTO FLIP) ================= */
-
+/* ================= CARDS (FLIP NEGRO) ================= */
 .cards {
   display: flex;
   justify-content: center;
@@ -162,7 +116,7 @@ ion-content {
 .card-inner {
   width: 100%;
   height: 100%;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
@@ -170,8 +124,7 @@ ion-content {
   transform: rotateY(180deg);
 }
 
-.card-front,
-.card-back {
+.card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -182,40 +135,23 @@ ion-content {
   align-items: center;
   justify-content: center;
   padding: 25px;
-  text-align: center;
   border: 2px solid #00ffff;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
 }
 
 .card-front {
-  background: #050505; /* Fondo frontal negro */
-}
-
-.card-front img {
-  width: 110px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 12px #00ffff);
+  background: #000000 !important;
 }
 
 .card-back {
+  background: #0a0a0a !important;
   transform: rotateY(180deg);
-  background: #0a0a0a; /* Fondo trasero casi negro */
-  border-color: #7b2cff; /* Cambio de color para diferenciar la vuelta */
-  box-shadow: 0 0 20px rgba(123, 44, 255, 0.4);
-}
-
-.card-back p {
-  font-size: 1rem;
-  line-height: 1.6;
 }
 
 /* ================= FOOTER ================= */
-
 footer {
   text-align: center;
   padding: 40px;
   border-top: 1px solid rgba(0, 255, 255, 0.3);
-  margin-top: 50px;
-  background: #000000;
-  color: #888;
+  background: #000000 !important;
 }
