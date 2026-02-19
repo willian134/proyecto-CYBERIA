@@ -1,35 +1,43 @@
-/* ===== CONFIGURACIÓN BASE ===== */
+/* ===== BASE Y SCROLL ===== */
 :host {
   display: block;
   height: 100%;
-  background-color: #000000;
 }
 
 ion-content {
   --background: #000000 !important;
+  background-color: #000000 !important;
   --overflow: auto;
   overflow-y: auto;
 }
 
-/* Contenedor principal que centra todo el contenido */
+/* Contenedor Maestro: Centra todo el contenido verticalmente */
 .main-wrapper {
-  width: 100%;
-  max-width: 1400px; /* Evita que en pantallas gigantes se estire demasiado */
-  margin: 0 auto;    /* CENTRADO HORIZONTAL DEL BLOQUE */
   display: flex;
   flex-direction: column;
-  align-items: center; /* CENTRADO DE HIJOS (TEXTO, SECCIONES) */
+  align-items: center; /* Centra horizontalmente todos los hijos */
+  width: 100%;
+  min-height: 100%;
   background-color: #000000;
-  padding-bottom: 50px;
 }
 
-/* ===== HEADER CENTRADO ===== */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #ffffff;
+}
+
+/* ================= HEADER CENTRADO ================= */
 .site-header {
   width: 100%;
   display: flex;
-  justify-content: center; /* Centra la navbar dentro del header */
+  justify-content: center;
   padding: 20px 0;
-  background: #000;
+  background: #000000;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .cyber-navbar {
@@ -38,64 +46,80 @@ ion-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 30px;
-  background: #050505;
-  border-radius: 50px;
-  border: 1px solid rgba(0, 255, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  padding: 12px 30px;
+  background: #0a0a0a;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
-/* ===== TEXTOS CENTRADOS (HERO) ===== */
+.logo {
+  font-size: 24px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover { color: #00ffff; }
+
+/* ================= SECCIÓN HERO (TEXTO) ================= */
 .hero {
-  text-align: center; /* Centra el texto */
   width: 90%;
-  max-width: 800px;
+  max-width: 900px;
+  text-align: center; /* Centra el texto */
   margin: 60px 0;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #ffffff, #00ffff);
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Tamaño fluido */
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00f6ff, #7b2cff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
 }
 
-.hero p, .intro-text {
-  font-size: 1.1rem;
+.hero p {
+  font-size: 1.2rem;
   line-height: 1.6;
   color: #cccccc;
-  margin: 0 auto;
 }
 
-/* ===== GRID DE TARJETAS DISTRIBUIDO ===== */
-.cards-container {
-  width: 90%;
+/* ================= DISTRIBUCIÓN DE TARJETAS ================= */
+.cards-grid {
+  width: 95%;
+  max-width: 1300px;
   display: grid;
-  /* Crea columnas automáticas que se centran solas */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  /* Crea columnas automáticas que se ajustan al tamaño de la pantalla */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  justify-items: center; /* Centra la tarjeta dentro de su celda */
-  justify-content: center; /* Centra el grupo de celdas */
-  max-width: 1200px;
-  margin-top: 40px;
+  justify-items: center; /* Centra cada tarjeta en su celda */
+  padding-bottom: 80px;
 }
 
-/* ===== ESTILO DE LA TARJETA (Ajustado) ===== */
+/* ESTILO DE LA TARJETA */
 .card {
   width: 100%;
   max-width: 280px;
-  height: 350px;
+  height: 380px;
   perspective: 1000px;
 }
 
 .card-inner {
   width: 100%;
   height: 100%;
-  position: relative;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 }
@@ -108,40 +132,37 @@ ion-content {
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 25px;
   backface-visibility: hidden;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 25px;
   border: 2px solid #00ffff;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-  background: #000;
+  background: #000000;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.card-front img {
+  width: 110px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 8px #00ffff);
 }
 
 .card-back {
   transform: rotateY(180deg);
-  background: #0a0a0a;
-  border-color: #ff007a; /* Color neón diferente para el reverso */
+  background: #050505;
+  border-color: #7b2cff;
+  box-shadow: 0 0 15px rgba(123, 44, 255, 0.3);
 }
 
-.card img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.card h3 {
-  font-size: 1.4rem;
-  color: #fff;
-  margin: 0;
-}
-
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer {
-  margin-top: 80px;
+  width: 100%;
   text-align: center;
-  color: #555;
-  font-size: 0.9rem;
+  padding: 40px;
+  border-top: 1px solid rgba(0, 255, 255, 0.1);
+  color: #444;
 }
