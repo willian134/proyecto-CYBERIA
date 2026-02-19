@@ -1,70 +1,148 @@
-/* ===== BASE ===== */
+/* =========================================
+   BASE Y ESTRUCTURA (FONDO NEGRO)
+   ========================================= */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* Fondo negro total */
+}
+
 ion-content {
-  background-color: #02010a;
-  color: rgb(5, 5, 5);
-}
-
-/* ===== HERO ===== */
-.hero h1,
-.hero p {
-  color: white;
-}
-
-/* ===== TARJETAS ===== */
-.card {
-  color: white;
-}
-
-/* ===== CHAT ===== */
-.chat-box {
-  color: white;
-}
-
-ion-textarea {
-  --color: white;
-}
-
-.user,
-.ai {
-  color: white;
-}
-
-/* ===== BASE ===== */
-ion-content {
-  --background: radial-gradient(circle at top, #0a1a3f, #02010a);
+  --background: #000000; /* Asegura el fondo en Ionic */
+  background-color: #000000;
   color: white;
   overflow-x: hidden;
-  font-family: Segoe UI, system-ui, sans-serif;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 section {
   padding: 90px 8%;
 }
 
-/* ===== TITULOS ===== */
+/* =========================================
+   NAVBAR & HEADER
+   ========================================= */
+.site-header {
+  width: 100%;
+  background: #050505; /* Un negro ligeramente distinto para contraste */
+  border-bottom: 1px solid rgba(0, 255, 255, .2);
+}
+
+.cyber-navbar {
+  max-width: 1200px;
+  margin: 15px auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0a0a0a;
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, .2);
+}
+
+.logo {
+  font-size: 28px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #bffcff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  background: rgba(0, 255, 255, .12);
+  color: #00ffff;
+  box-shadow: 0 0 12px rgba(0, 255, 255, .8);
+}
+
+/* USUARIO Y DROPDOWN */
+.user-menu { position: relative; }
+.user-btn {
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #1e3a8a, #06b6d4);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 255, 255, .5);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 190px;
+  background: #0a0a0a;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, .4);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: .3s;
+  z-index: 100;
+}
+
+.user-menu:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.user-dropdown a {
+  display: block;
+  padding: 14px;
+  color: #bffcff;
+  text-decoration: none;
+}
+
+.user-dropdown a:hover {
+  background: rgba(0, 255, 255, .15);
+  color: #00ffff;
+}
+
+/* =========================================
+   HERO Y TÍTULOS
+   ========================================= */
+.hero {
+  text-align: center;
+  margin-top: 40px;
+}
+
 h1 {
   text-align: center;
-  font-size: 3.3rem;
+  font-size: 3.5rem;
   background: linear-gradient(90deg, #00f6ff, #7b2cff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
 }
 
-/* ===== SUBTITULO RAYO ===== */
+.hero p {
+  color: #9ffcff;
+  font-size: 1.2rem;
+}
+
 .subtitle {
   text-align: center;
   max-width: 950px;
   margin: 30px auto 70px;
   font-size: 1.3rem;
-  background: linear-gradient(
-    120deg,
-    #cfdfff 40%,
-    #00f6ff 45%,
-    #7b2cff 50%,
-    #00f6ff 55%,
-    #cfdfff 60%
-  );
+  background: linear-gradient(120deg, #cfdfff 40%, #00f6ff 45%, #7b2cff 50%, #00f6ff 55%, #cfdfff 60%);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -77,27 +155,12 @@ h1 {
   100% { background-position: 300% 50%; }
 }
 
-/* ===== HERO ===== */
-.hero {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.hero h1 {
-  color: white;
-  font-size: 48px;
-  letter-spacing: 2px;
-}
-
-.hero p {
-  color: #9ffcff;
-  margin-top: 10px;
-}
-
-/* ===== FUSION ===== */
+/* =========================================
+   FUSIÓN ANIMADA
+   ========================================= */
 .fusion-zone {
   position: relative;
-  height: 360px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,18 +171,11 @@ h1 {
   position: absolute;
   animation-duration: 14s;
   animation-iteration-count: infinite;
-  filter: drop-shadow(0 0 45px cyan);
+  filter: drop-shadow(0 0 30px cyan);
 }
 
-#chatgpt {
-  left: -260px;
-  animation-name: chatgptImpact;
-}
-
-#gemini {
-  right: -260px;
-  animation-name: geminiImpact;
-}
+#chatgpt { left: -260px; animation-name: chatgptImpact; }
+#gemini { right: -260px; animation-name: geminiImpact; }
 
 .impact {
   position: absolute;
@@ -136,26 +192,21 @@ h1 {
   width: 280px;
   opacity: 0;
   animation: robotFusion 14s infinite;
-  filter: drop-shadow(0 0 90px #7b2cff);
+  filter: drop-shadow(0 0 50px #7b2cff);
 }
 
-/* ===== ANIMACIONES FUSION ===== */
 @keyframes chatgptImpact {
-  0% { transform: translateX(0); }
+  0% { transform: translateX(0); opacity: 1; }
   20% { transform: translateX(520px) scale(1.1); }
-  25% { transform: translateX(540px) scale(0.7) rotate(-10deg); }
-  30% { opacity: 0; }
-  75% { opacity: 0; }
-  100% { opacity: 1; transform: translateX(0); }
+  25% { transform: translateX(540px) scale(0.7); opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @keyframes geminiImpact {
-  0% { transform: translateX(0); }
+  0% { transform: translateX(0); opacity: 1; }
   20% { transform: translateX(-520px) scale(1.1); }
-  25% { transform: translateX(-540px) scale(0.7) rotate(10deg); }
-  30% { opacity: 0; }
-  75% { opacity: 0; }
-  100% { opacity: 1; transform: translateX(0); }
+  25% { transform: translateX(-540px) scale(0.7); opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @keyframes impactFlash {
@@ -166,60 +217,49 @@ h1 {
 }
 
 @keyframes robotFusion {
-  0%, 30% { opacity: 0; transform: scale(0.2) rotate(0deg); }
-  40% { opacity: 1; transform: scale(1.5) rotate(360deg); }
-  60% { transform: scale(1) rotate(360deg); }
-  70% { opacity: 0; transform: scale(0.2); }
-  100% { opacity: 0; }
+  0%, 30% { opacity: 0; transform: scale(0.2); }
+  45%, 65% { opacity: 1; transform: scale(1) rotate(360deg); }
+  75%, 100% { opacity: 0; transform: scale(0.2); }
 }
 
-/* ===== TARJETAS ===== */
+/* =========================================
+   TARJETAS
+   ========================================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 45px;
+  gap: 40px;
 }
 
 .card {
-  background: linear-gradient(145deg, #0b1025, #050817);
+  background: #0a0a0a; /* Fondo oscuro para la tarjeta */
   padding: 35px;
   border-radius: 28px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   animation: pulse 4.5s ease-in-out infinite;
 }
 
-.card:nth-child(2) { animation-delay: 1s; }
-.card:nth-child(3) { animation-delay: 2s; }
-.card:nth-child(4) { animation-delay: 3s; }
-.card:nth-child(5) { animation-delay: 4s; }
-.card:nth-child(6) { animation-delay: 5s; }
-
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 25px rgba(0, 246, 255, .4);
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0 0 80px rgba(0, 246, 255, .9);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 25px rgba(0, 246, 255, .4);
-  }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 246, 255, .2); }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 246, 255, .5); }
 }
 
 .good { border: 2px solid #00f6ff; }
 .bad { border: 2px solid #ff4d4d; }
 .example { border: 2px solid #9aff9a; }
 
-/* ===== CHAT ===== */
+/* =========================================
+   CHAT BOX
+   ========================================= */
 .chat-box {
   max-width: 900px;
-  margin: auto;
-  background: #0b1025;
+  margin: 40px auto;
+  background: #0a0a0a;
   border-radius: 25px;
   padding: 30px;
-  box-shadow: 0 0 50px rgba(0, 246, 255, .4);
+  border: 1px solid rgba(0, 246, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 246, 255, .2);
 }
 
 ion-textarea {
@@ -227,8 +267,9 @@ ion-textarea {
   height: 90px;
   border-radius: 15px;
   padding: 14px;
-  --background: #020617;
+  --background: #111;
   --color: white;
+  color: white;
 }
 
 ion-button {
@@ -237,174 +278,5 @@ ion-button {
   --background: linear-gradient(90deg, #00f6ff, #7b2cff);
 }
 
-.mensajes div {
-  margin-top: 12px;
-}
-
-.user { color: #9be7ff; }
-.ai { color: #b7ffb7; }
-/* MENÚ */
-.menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.menu ul li a:hover {
-    color: #00f7ff;
-}
-body{
-  margin:0;
-  padding:0;
-}
-
-.site-header{
-  width:100%;
-  background:linear-gradient(90deg,#020617,#0b1120);
-  border-bottom:1px solid rgba(0,255,255,.2);
-}
-
-/* ===============================
-   NAVBAR
-================================ */
-.cyber-navbar{
-  max-width:1200px;
-  margin:auto;
-  padding:12px 20px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  background:linear-gradient(90deg,#020617,#020617);
-  border-radius:40px;
-  box-shadow:
-    0 0 10px rgba(0,255,255,.4),
-    0 0 25px rgba(0,255,255,.25);
-}
-
-/* ===============================
-   LOGO
-================================ */
-.logo{
-  font-size:28px;
-  color:#00ffff;
-  text-shadow:0 0 10px #00ffff;
-}
-
-/* ===============================
-   LINKS
-================================ */
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:28px;
-}
-
-.nav-links a{
-  color:#bffcff;
-  text-decoration:none;
-  font-weight:500;
-  padding:6px 12px;
-  border-radius:20px;
-  transition:.3s;
-}
-
-.nav-links a:hover{
-  background:rgba(0,255,255,.12);
-  color:#00ffff;
-  box-shadow:0 0 12px rgba(0,255,255,.8);
-}
-
-/* ===============================
-   USUARIO
-================================ */
-.user-menu{
-  position:relative;
-}
-
-.user-btn{
-  padding:8px 18px;
-  border-radius:30px;
-  background:linear-gradient(90deg,#1e3a8a,#06b6d4);
-  color:white;
-  font-weight:500;
-  cursor:pointer;
-  box-shadow:
-    0 0 10px #00ffff,
-    0 0 25px rgba(0,255,255,.6);
-}
-
-/* ===============================
-   DROPDOWN
-================================ */
-.user-dropdown{
-  position:absolute;
-  top:120%;
-  right:0;
-  width:190px;
-  background:#020617;
-  border-radius:15px;
-  box-shadow:
-    0 0 20px rgba(0,255,255,.7);
-  overflow:hidden;
-
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(10px);
-  transition:.3s;
-}
-
-/* ===============================
-   OPCIONES
-================================ */
-.user-dropdown a{
-  display:block;
-  padding:14px;
-  color:#bffcff;
-  text-decoration:none;
-  transition:.3s;
-}
-
-.user-dropdown a:hover{
-  background:rgba(0,255,255,.15);
-  color:#00ffff;
-}
-
-/* ===============================
-   MOSTRAR MENÚ
-================================ */
-.user-menu:hover .user-dropdown{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
-}
-.hero{
-  text-align: center;
-  margin-top: 20px;
-}
-
-.hero h1{
-  color:white;
-  font-size:48px;
-  letter-spacing:2px;
-}
-
-.hero p{
-  color:#9ffcff;
-  margin-top:10px;
-}
-.intro{
-  max-width:700px;
-  margin:auto;
-  padding:20px;
-  text-align:center;
-}
+.user { color: #9be7ff; font-weight: bold; }
+.ai { color: #b7ffb7; font-weight: bold; }
