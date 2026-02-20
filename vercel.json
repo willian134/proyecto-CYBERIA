@@ -1,6 +1,6 @@
 {
   "buildCommand": "ionic build",
-"outputPath": "dist/cyberia",
+
   "framework": null,
   "routes": [
     { "handle": "filesystem" },
