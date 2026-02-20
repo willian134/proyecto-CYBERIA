@@ -1,138 +1,264 @@
-/* Fondo general Ionic */
+:host {
+  display: block;
+  min-height: 100%;
+}
+
+/* Fondo general */
 ion-content {
-  --background: radial-gradient(circle at top, #021c24, #000000 70%);
+  --background: radial-gradient(circle at top, #0a2a33, #000);
   color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #3a1010;
 }
 
 /* ================= HEADER ================= */
 
 .site-header {
-  padding: 20px 0;
+  width: 100%;
+  background: linear-gradient(90deg, #020617, #0b1120);
+  border-bottom: 1px solid rgba(0,255,255,.2);
 }
 
+/* NAVBAR */
 .cyber-navbar {
   max-width: 1200px;
   margin: auto;
-  padding: 15px 30px;
+  padding: 12px 20px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  border-radius: 50px;
-  background: #020617;
+  background: linear-gradient(90deg, #020617, #020617);
+  border-radius: 40px;
 
   box-shadow:
-    0 0 15px rgba(0,255,255,.6),
-    0 0 40px rgba(0,255,255,.3);
+    0 0 10px rgba(0,255,255,.4),
+    0 0 25px rgba(0,255,255,.25);
 }
 
+/* LOGO */
 .logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 0 15px cyan;
+  font-size: 28px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ffff;
 }
 
+/* LINKS NAVBAR */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 28px;
 }
 
 .nav-links a {
-  text-decoration: none;
   color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
   transition: .3s;
 }
 
 .nav-links a:hover {
-  color: cyan;
-  text-shadow: 0 0 10px cyan;
+  background: rgba(0,255,255,.12);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0,255,255,.8);
+}
+
+/* ================= USUARIO ================= */
+
+.user-menu {
+  position: relative;
 }
 
 .user-btn {
-  padding: 8px 20px;
+  padding: 8px 18px;
   border-radius: 30px;
   background: linear-gradient(90deg,#1e3a8a,#06b6d4);
-  box-shadow: 0 0 15px cyan;
+  color: #ffffff;
+  font-weight: 500;
   cursor: pointer;
-  color: white;
+
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 25px rgba(0,255,255,.6);
+}
+
+/* DROPDOWN */
+.user-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 190px;
+
+  background: #020617;
+  border-radius: 15px;
+
+  box-shadow: 0 0 20px rgba(0,255,255,.7);
+
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: .3s;
+}
+
+.user-dropdown a {
+  display: block;
+  padding: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.user-dropdown a:hover {
+  background: rgba(0,255,255,.15);
+  color: #ffffff;
+}
+
+.user-menu:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* ================= HERO ================= */
 
 .hero {
   text-align: center;
-  margin-top: 40px;
-  padding: 0 20px;
+  margin-top: 20px;
 }
 
 .hero h1 {
-  font-size: 42px;
-  letter-spacing: 3px;
-  font-weight: 300;
-}
-
-.hero h2 {
-  margin-top: 15px;
-  color: #ff4d4d;
+  color: #ffffff;
+  font-size: 48px;
+  letter-spacing: 2px;
 }
 
 .hero p {
-  max-width: 800px;
-  margin: 15px auto;
-  color: #ff4d4d;
+  color: #ffffff;
+  margin-top: 10px;
 }
 
-/* ================= CARDS ================= */
+/* ================= INTRO ================= */
+
+.intro {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* ================= CARDS DESLIZABLES ================= */
 
 .cards {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 40px;
-  padding: 60px 20px;
+  padding: 50px;
+  overflow-x: auto;           /* DESLIZAMIENTO */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 
+.cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: cyan;
+  border-radius: 10px;
+  box-shadow: 0 0 10px cyan;
+}
+
+/* CARD */
 .card {
+  flex: 0 0 auto;
   width: 260px;
   height: 340px;
-  border-radius: 25px;
+  perspective: 1000px;
+  scroll-snap-align: center;
+}
 
-  background: rgba(0, 40, 50, 0.7);
+/* INTERIOR */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* GIRO */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* CARAS */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+
+  /* FONDO NEÓN INTENSO */
+  background: radial-gradient(circle at top, rgba(0,255,255,0.15), rgba(0,0,0,0.95));
+
   border: 2px solid #00ffff;
 
   box-shadow:
-    0 0 20px #00ffff,
-    0 0 60px rgba(0,255,255,.4);
+    0 0 10px #00ffff,
+    0 0 25px #00ffff,
+    0 0 50px rgba(0,255,255,0.6),
+    inset 0 0 20px rgba(0,255,255,0.3);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  transition: 0.4s ease;
+  padding: 20px;
+  backface-visibility: hidden;
+  text-align: center;
+  color: #ffffff;
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow:
-    0 0 40px #00ffff,
-    0 0 80px rgba(0,255,255,.8);
-}
-
-.card img {
-  width: 90px;
+/* ICONOS */
+.card-front img {
+  width: 100px;
   margin-bottom: 20px;
   filter: drop-shadow(0 0 15px cyan);
 }
 
-.card h3 {
-  color: white;
+/* BACK */
+.card-back {
+  transform: rotateY(180deg);
+  background: radial-gradient(circle at center, rgba(0,255,255,0.2), rgba(0,20,30,0.95));
 }
 
-/* Scroll extra seguro */
-ion-content::part(scroll) {
-  overflow-y: auto;
+.card-back p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid cyan;
+  margin-top: 40px;
+  color: #ffffff;
 }
