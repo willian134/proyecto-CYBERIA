@@ -3,9 +3,17 @@
   min-height: 100%;
 }
 
+/* Permitir scroll */
+html, body {
+  height: 100%;
+  overflow-y: auto;
+  background: #000;
+  color: #ffffff;
+}
+
 /* Fondo general */
 ion-content {
-  --background: radial-gradient(circle at top, #0a2a33, #000);
+  --background: #000;
   color: #ffffff;
 }
 
@@ -15,15 +23,15 @@ ion-content {
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Arial, sans-serif;
-  color: #3a1010;
+  color: #ffffff; /* TEXTO BLANCO GLOBAL */
 }
 
 /* ================= HEADER ================= */
 
 .site-header {
   width: 100%;
-  background: linear-gradient(90deg, #020617, #0b1120);
-  border-bottom: 1px solid rgba(0,255,255,.2);
+  background: #000;
+  border-bottom: 1px solid rgba(255,255,255,.2);
 }
 
 /* NAVBAR */
@@ -36,19 +44,16 @@ ion-content {
   align-items: center;
   justify-content: space-between;
 
-  background: linear-gradient(90deg, #020617, #020617);
+  background: #000;
   border-radius: 40px;
 
-  box-shadow:
-    0 0 10px rgba(0,255,255,.4),
-    0 0 25px rgba(0,255,255,.25);
+  box-shadow: 0 0 15px rgba(255,255,255,.2);
 }
 
 /* LOGO */
 .logo {
   font-size: 28px;
   color: #ffffff;
-  text-shadow: 0 0 10px #00ffff;
 }
 
 /* LINKS NAVBAR */
@@ -68,9 +73,7 @@ ion-content {
 }
 
 .nav-links a:hover {
-  background: rgba(0,255,255,.12);
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(0,255,255,.8);
+  background: rgba(255,255,255,.1);
 }
 
 /* ================= USUARIO ================= */
@@ -82,27 +85,21 @@ ion-content {
 .user-btn {
   padding: 8px 18px;
   border-radius: 30px;
-  background: linear-gradient(90deg,#1e3a8a,#06b6d4);
+  background: #111;
   color: #ffffff;
   font-weight: 500;
   cursor: pointer;
-
-  box-shadow:
-    0 0 10px #00ffff,
-    0 0 25px rgba(0,255,255,.6);
 }
 
-/* DROPDOWN */
 .user-dropdown {
   position: absolute;
   top: 120%;
   right: 0;
   width: 190px;
 
-  background: #020617;
+  background: #000;
   border-radius: 15px;
-
-  box-shadow: 0 0 20px rgba(0,255,255,.7);
+  border: 1px solid #ffffff;
 
   overflow: hidden;
 
@@ -117,12 +114,10 @@ ion-content {
   padding: 14px;
   color: #ffffff;
   text-decoration: none;
-  transition: .3s;
 }
 
 .user-dropdown a:hover {
-  background: rgba(0,255,255,.15);
-  color: #ffffff;
+  background: rgba(255,255,255,.1);
 }
 
 .user-menu:hover .user-dropdown {
@@ -139,13 +134,11 @@ ion-content {
 }
 
 .hero h1 {
-  color: #ffffff;
   font-size: 48px;
   letter-spacing: 2px;
 }
 
 .hero p {
-  color: #ffffff;
   margin-top: 10px;
 }
 
@@ -156,7 +149,6 @@ ion-content {
   margin: auto;
   padding: 20px;
   text-align: center;
-  color: #ffffff;
 }
 
 /* ================= CARDS ================= */
@@ -193,10 +185,8 @@ ion-content {
   height: 100%;
   border-radius: 20px;
 
-  background: rgba(0,255,255,0.08);
-  border: 2px solid cyan;
-
-  box-shadow: 0 0 25px cyan;
+  background: #111;
+  border: 1px solid #ffffff;
 
   display: flex;
   flex-direction: column;
@@ -206,24 +196,21 @@ ion-content {
   padding: 20px;
   backface-visibility: hidden;
   text-align: center;
-  color: #ffffff;
 }
 
 .card-front img {
   width: 100px;
   margin-bottom: 20px;
-  filter: drop-shadow(0 0 10px cyan);
 }
 
 .card-back {
   transform: rotateY(180deg);
-  background: rgba(0,40,50,0.9);
+  background: #000;
 }
 
 .card-back p {
   font-size: 0.95em;
   line-height: 1.5;
-  color: #ffffff;
 }
 
 /* ================= FOOTER ================= */
@@ -231,7 +218,6 @@ ion-content {
 footer {
   text-align: center;
   padding: 30px;
-  border-top: 1px solid cyan;
+  border-top: 1px solid #ffffff;
   margin-top: 40px;
-  color: #ffffff;
 }
