@@ -1,0 +1,35 @@
+<ion-content>
+
+  <div class="container">
+    <div class="card">
+      <h1>Registro</h1>
+
+      <form (ngSubmit)="registrar()">
+
+        <div class="inputBox">
+          <input type="text" required [(ngModel)]="name" name="name">
+          <span>Nombre completo</span>
+        </div>
+
+        <div class="inputBox">
+          <input type="email" required [(ngModel)]="email" name="email">
+          <span>Correo Electrónico</span>
+        </div>
+
+        <div class="inputBox">
+          <input type="password" required [(ngModel)]="pass" name="pass">
+          <span>Contraseña</span>
+        </div>
+
+        <div class="inputBox">
+          <input type="password" required [(ngModel)]="confirm" name="confirm">
+          <span>Confirmar contraseña</span>
+        </div>
+
+        <button type="submit">Crear cuenta</button>
+
+      </form>
+    </div>
+  </div>
+
+</ion-content>

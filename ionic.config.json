@@ -1,0 +1,7 @@
+{
+  "name": "CyberIA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

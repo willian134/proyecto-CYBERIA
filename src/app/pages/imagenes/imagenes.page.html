@@ -1,0 +1,85 @@
+<ion-content>
+
+  <app-navbar></app-navbar>
+   
+  <div class="hero">
+    <h1>Prompt Engineering</h1>
+    
+    <p class="subtitle">
+      Aprende a comunicarte correctamente con la Inteligencia Artificial
+    </p>
+  </div>
+
+
+  <!-- // DE IMÁGENES -->
+  <div class="fusion-zone">
+    <div class="impact"></div>
+
+    <img id="chatgpt"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/512px-ChatGPT-Logo.svg.png" />
+
+    <img id="gemini"
+      src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/gemini-color.png" />
+
+    <img id="robot"
+      src="https://png.pngtree.com/png-vector/20250512/ourmid/pngtree-futuristic-robot-holding-and-using-tablet-png-image_16195269.png" />
+  </div>
+
+  <!-- INFORMACIÓN DEL PROMPT -->
+  <section class="cards">
+
+    <div class="card good">
+      <h3>¿Qué es un Prompt?</h3>
+      <p>Es la instrucción que guía a la IA indicando rol, contexto y objetivo.</p>
+    </div>
+
+    <div class="card good">
+      <h3>Elementos Clave</h3>
+      <ul>
+        <li>Rol de la IA</li>
+        <li>Contexto claro</li>
+        <li>Objetivo específico</li>
+        <li>Formato esperado</li>
+      </ul>
+    </div>
+
+    <div class="card example">
+      <h3>Buen Prompt</h3>
+      <p>
+        “Actúa como docente universitario y explica el prompt engineering
+        con ejemplos claros.”
+      </p>
+    </div>
+
+    <div class="card bad">
+      <h3>Mal Prompt</h3>
+      <p>“Explícame IA”</p>
+    </div>
+
+  </section>
+
+  <!-- CHAT -->
+  <section class="chat-box">
+
+    <h2>Chat para Practicar</h2>
+
+    <div class="mensajes">
+      <div *ngFor="let m of mensajes"
+           [class.user]="m.tipo === 'user'"
+           [class.ai]="m.tipo === 'ai'">
+        {{ m.texto }}
+      </div>
+    </div>
+
+    <ion-textarea
+      [(ngModel)]="prompt"
+      placeholder="Escribe tu prompt aquí...">
+    </ion-textarea>
+
+    <ion-button expand="block" (click)="enviarPrompt()">
+      Evaluar Prompt
+    </ion-button>
+
+  </section>
+
+</ion-content>

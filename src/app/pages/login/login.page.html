@@ -1,0 +1,25 @@
+<ion-content fullscreen>
+  <div class="page-center">
+    <div class="card">
+      <h2>Iniciar Sesión</h2>
+
+      <ion-input
+        type="email"
+        placeholder="Correo"
+        [(ngModel)]="email">
+      </ion-input>
+
+      <ion-input
+        type="password"
+        placeholder="Contraseña"
+        [(ngModel)]="pass">
+      </ion-input>
+
+      <ion-button expand="block" (click)="login()">
+        Entrar
+      </ion-button>
+
+      <p class="msg">{{ msg }}</p>
+    </div>
+  </div>
+</ion-content>

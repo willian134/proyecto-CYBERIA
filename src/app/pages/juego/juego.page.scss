@@ -1,0 +1,92 @@
+ion-content {
+  --background: radial-gradient(circle, #acb1b9, #000);
+  color: #ffffff;
+  text-align: center;
+}
+
+button,
+ion-button {
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+/* TABLERO */
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(10, 60px);
+  gap: 6px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.casilla {
+  width: 60px;
+  height: 60px;
+  background: #031c3a;
+  border-radius: 10px;
+  position: relative;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+/* FICHAS */
+.ficha {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.goku {
+  background: orange;
+  color: #ffffff;
+}
+
+.vegeta {
+  background: #4dabf7;
+  color: #ffffff;
+}
+
+/* MODAL */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+#preguntaBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #022b44;
+  border: 3px solid #00ffff;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  z-index: 1000;
+  color: #ffffff;
+}
+
+.opcion {
+  background: #014f86;
+  margin: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.opcion:hover {
+  background: #00b4d8;
+  color: #ffffff;
+}

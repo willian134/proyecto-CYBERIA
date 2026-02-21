@@ -1,0 +1,70 @@
+<ion-content class="cyber-bg">
+
+  <app-navbar></app-navbar>
+
+  <div class="layout">
+
+    <!-- PANEL IZQUIERDO (CYBER) -->
+    <div class="side-panel">
+
+      <!-- PROMPTS -->
+      <div class="questions">
+        <h3>Prompts IA</h3>
+
+        <button (click)="sendPredefined(prompts[0])">
+          Explícame qué es la IA
+        </button>
+
+        <button (click)="sendPredefined(prompts[1])">
+          Ejemplo práctico de IA
+        </button>
+
+        <button (click)="sendPredefined(prompts[2])">
+          Diferencia IA, ML y DL
+        </button>
+      </div>
+
+      <!-- CALCULADORA -->
+      <div class="calculator">
+        <h3>Calculadora</h3>
+
+        <input type="text" [value]="calcDisplay" disabled />
+
+        <div class="keys">
+          <button *ngFor="let key of calcKeys" (click)="pressKey(key)">
+            {{ key }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CHAT IA (BLANCO) -->
+    <div class="chat-white">
+
+      <div class="ai-status">● IA ONLINE</div>
+
+      <div class="chat-box">
+        <div
+          *ngFor="let msg of messages"
+          class="message"
+          [class.user]="msg.sender === 'user'"
+          [class.bot]="msg.sender === 'bot'"
+        >
+          {{ msg.text }}
+        </div>
+      </div>
+
+      <div class="input-area">
+        <input
+          [(ngModel)]="userInput"
+          placeholder="Escribe tu mensaje"
+        />
+        <button (click)="sendMessage()">Enviar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

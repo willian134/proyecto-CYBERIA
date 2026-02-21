@@ -1,0 +1,102 @@
+ion-content {
+  --background: radial-gradient(circle at top, #04232a, #000);
+  color: #ffffff;
+}
+
+/* TÍTULOS */
+.titulo {
+  margin: 30px 0;
+  color: #ffffff;
+  text-shadow: 0 0 20px #00ffff;
+  text-align: center;
+}
+
+.subtitulo {
+  margin: 70px 0 35px;
+  color: #ffffff;
+  text-shadow: 0 0 15px #00ffff;
+  text-align: center;
+}
+
+/* ===== CARTAS SUPERIORES ===== */
+.cards-top {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card {
+  width: 240px;
+  height: 320px;
+  perspective: 1200px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #031a1f, #05333a);
+  transform: rotateY(180deg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+/* ===== PARTE INFERIOR ===== */
+.cards-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+
+.info-card {
+  width: 260px;
+  padding: 22px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #031a1f, #042a31);
+  transition: 0.4s;
+  color: #ffffff;
+}
+
+.info-card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.6),
+    0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+.info-card h3 {
+  color: #ffffff;
+}
