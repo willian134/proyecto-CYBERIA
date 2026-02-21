@@ -1,150 +1,160 @@
-/* ================= FONDO NEGRO TOTAL ================= */
-
-:host {
+/* FONDO NEGRO NEÓN */
+.neon-content {
   --background: #000000 !important;
   background: #000000 !important;
 }
 
-ion-content {
-  --background: #000000 !important;
-  background: #000000 !important;
-}
-
-html, body {
-  background: #000000 !important;
-}
-
-/* ================= NAVBAR ================= */
-
+/* NAVBAR */
 .site-header {
-  padding: 20px 0;
-  background: #000000;
+  padding: 20px 10px;
 }
 
 .cyber-navbar {
-  max-width: 1250px;
+  max-width: 1200px;
   margin: auto;
-  padding: 18px 40px;
+  padding: 15px 25px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 
-  border-radius: 50px;
+  border-radius: 40px;
   background: #020b1c;
 
   box-shadow:
-    0 0 25px rgba(0,255,255,0.6),
-    0 0 60px rgba(0,255,255,0.4);
+    0 0 25px #00ffff,
+    0 0 80px rgba(0,255,255,0.6);
 }
 
-.logo img {
-  width: 50px;
-  filter: drop-shadow(0 0 10px cyan);
+/* LOGO */
+.logo {
+  font-size: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
 }
 
+/* LINKS */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 25px;
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   transition: .3s;
 }
 
 .nav-links a:hover {
   color: #00ffff;
-  text-shadow: 0 0 12px #00ffff;
+  text-shadow: 0 0 10px #00ffff;
 }
 
+/* BOTÓN */
 .user-btn {
-  padding: 8px 22px;
-  border-radius: 30px;
+  padding: 6px 18px;
+  border-radius: 25px;
   background: linear-gradient(90deg,#1e3a8a,#06b6d4);
   box-shadow: 0 0 20px #00ffff;
-  font-size: 14px;
+  font-size: 13px;
   color: white;
 }
 
-/* ================= HERO ================= */
-
+/* HERO */
 .hero {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
+  padding: 0 20px;
 }
 
 .hero h1 {
-  font-size: 48px;
-  letter-spacing: 4px;
-  font-weight: 300;
+  font-size: 40px;
   color: white;
-}
-
-.hero h2 {
-  margin-top: 15px;
-  color: #ff4d4d;
+  text-shadow: 0 0 20px #00ffff;
 }
 
 .hero p {
-  max-width: 750px;
-  margin: 10px auto;
-  color: #ff4d4d;
+  color: #00ffff;
 }
 
-/* ================= CARDS ================= */
-
+/* CARDS */
 .cards {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 70px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .card {
-  width: 250px;
-  height: 330px;
-
-  border-radius: 25px;
+  height: 300px;
+  border-radius: 20px;
   background: rgba(0, 40, 50, 0.6);
   border: 2px solid #00ffff;
 
   box-shadow:
     0 0 30px #00ffff,
-    0 0 70px rgba(0,255,255,0.6);
+    0 0 80px rgba(0,255,255,0.8);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  transition: 0.4s ease;
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow:
-    0 0 50px #00ffff,
-    0 0 100px rgba(0,255,255,0.9);
 }
 
 .card img {
-  width: 95px;
-  margin-bottom: 20px;
+  width: 80px;
+  margin-bottom: 15px;
   filter: drop-shadow(0 0 15px cyan);
 }
 
 .card h3 {
-  font-size: 18px;
   color: white;
 }
 
-/* ================= SCROLL ================= */
+/* ================= RESPONSIVE ================= */
 
-ion-content::part(scroll) {
-  overflow-y: auto;
+/* TABLET */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+
+  .cyber-navbar {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
 }
