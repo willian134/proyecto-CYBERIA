@@ -1,17 +1,23 @@
-/* FONDO GENERAL CYBER */
-.cyber-bg {
-  --background: radial-gradient(circle at top, #0f172a, #020617);
+/* ================= FONDO NEGRO PURO IONIC ================= */
+
+ion-content.cyber-bg {
+  --background: #000000 !important;
+  background: #000000 !important;
+  color: #ffffff;
 }
 
-/* LAYOUT */
+/* ================= LAYOUT ================= */
+
 .layout {
   display: flex;
   justify-content: center;
   gap: 30px;
   padding: 30px;
+  flex-wrap: wrap;
 }
 
-/* PANEL IZQUIERDO */
+/* ================= PANEL IZQUIERDO ================= */
+
 .side-panel {
   width: 260px;
   display: flex;
@@ -19,14 +25,16 @@
   gap: 25px;
 }
 
-/* PROMPTS CYBER */
+/* ================= BLOQUES CYBER ================= */
+
 .questions,
 .calculator {
-  background: rgba(15, 23, 42, 0.9);
+  background: #0a0a0a;
   border: 1px solid #22d3ee;
   border-radius: 14px;
   padding: 15px;
   box-shadow: 0 0 15px #22d3ee33;
+  color: #ffffff;
 }
 
 .questions h3,
@@ -35,6 +43,8 @@
   color: #22d3ee;
   margin-bottom: 10px;
 }
+
+/* ================= BOTONES PREGUNTAS ================= */
 
 .questions button {
   width: 100%;
@@ -45,14 +55,16 @@
   color: #22d3ee;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .questions button:hover {
   background: #22d3ee;
-  color: #020617;
+  color: #000000;
 }
 
-/* CALCULADORA */
+/* ================= CALCULADORA ================= */
+
 .calculator input {
   width: 100%;
   margin-bottom: 10px;
@@ -60,6 +72,8 @@
   text-align: right;
   border-radius: 6px;
   border: none;
+  background: #000000;
+  color: #22d3ee;
 }
 
 .keys {
@@ -71,49 +85,63 @@
 .keys button {
   padding: 8px;
   border-radius: 6px;
-  border: none;
-  background: #020617;
+  background: #000000;
   color: #22d3ee;
   border: 1px solid #22d3ee;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* CHAT BLANCO */
+.keys button:hover {
+  background: #22d3ee;
+  color: #000000;
+}
+
+/* ================= CHAT BLANCO ================= */
+
 .chat-white {
   width: 480px;
-  background: #ffffff;
+  background: #111111;
   border-radius: 18px;
   padding: 16px;
+  color: #ffffff;
+  box-shadow: 0 0 20px #22d3ee33;
 }
 
 .ai-status {
-  color: #16a34a;
+  color: #22d3ee;
   font-size: 12px;
   margin-bottom: 6px;
 }
 
+/* ================= CAJA CHAT ================= */
+
 .chat-box {
   height: 300px;
-  background: #f8fafc;
+  background: #000000;
   border-radius: 10px;
   padding: 12px;
   overflow-y: auto;
+  border: 1px solid #22d3ee33;
 }
 
 .message {
   margin: 6px 0;
+  font-size: 14px;
 }
 
 .user {
   text-align: right;
-  color: #2563eb;
+  color: #22d3ee;
 }
 
 .bot {
   text-align: left;
-  color: #020617;
+  color: #ffffff;
 }
 
-/* INPUT */
+/* ================= INPUT ================= */
+
 .input-area {
   display: flex;
   gap: 6px;
@@ -123,12 +151,22 @@
 .input-area input {
   flex: 1;
   padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #22d3ee;
+  background: #000000;
+  color: #ffffff;
 }
 
 .input-area button {
-  background: #2563eb;
-  color: white;
+  background: #22d3ee;
+  color: #000000;
   border: none;
   border-radius: 8px;
   padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-area button:hover {
+  box-shadow: 0 0 10px #22d3ee;
 }

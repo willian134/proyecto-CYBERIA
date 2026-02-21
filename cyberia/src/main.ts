@@ -11,14 +11,4 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],
-  
-});
-
-
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideIonicAngular({
-      mode: 'md' // o 'ios'
-    })
-  ]
 });
